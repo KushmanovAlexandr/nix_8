@@ -2,7 +2,6 @@ package ua.com.alevel.end_of_lessons;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class EndOfLessons {
 
@@ -10,11 +9,14 @@ public class EndOfLessons {
         System.out.println("Task3.run");
         System.out.println("Enter the lesson number from 1 to 10:");
         int countLesson = 0;
+        int[] array = new int[11];
+        int except = 1;
         try {
             countLesson = Integer.parseInt(reader.readLine());
-        } catch (IOException | NumberFormatException e) {
-            System.out.println("Incorrect entry of the lesson number!");
-            System.out.println("Enter the lesson number from 1 to 10:");
+            except /= countLesson; // if (countLesson == 0) throw ArithmeticException
+            except = array[countLesson]; // if (countLesson<0 && countLesson>10) throw ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException | ArithmeticException | NumberFormatException e) {
+            System.out.println("Неправильнный ввод");
             return;
         }
         int pauseLong = 15;

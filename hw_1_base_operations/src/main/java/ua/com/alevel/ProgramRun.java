@@ -17,23 +17,33 @@ public class ProgramRun {
         try {
             while ((event = reader.readLine()) != null) {
                 switch (event) {
-                    case "1" : {
+                    case "1": {
                         new CharFromString().run(reader);
-                    } break;
-                    case "2" : {
+                    }
+                    break;
+                    case "2": {
                         new SumOfStringNumbers().run(reader);
-                    } break;
-                    case "3" : {
+                    }
+                    break;
+                    case "3": {
                         new EndOfLessons().run(reader);
-                    } break;
-                    case "0" : {
+                    }
+                    break;
+                    case "0": {
                         System.exit(0);
-                    } break;
+                    }
+                    break;
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+        try {
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
     }
 
     private static void preview() {

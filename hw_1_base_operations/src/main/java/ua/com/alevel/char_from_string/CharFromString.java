@@ -16,10 +16,10 @@ public class CharFromString {
 //            System.out.print(Character.isDigit(charArray[i])+" ");
 //        }
         for (int i = 0; i < charArray.length; i++) {
-            if(Character.isDigit(charArray[i]))
-                sum +=Character.getNumericValue(charArray[i]);
+            if (Character.isDigit(charArray[i]))
+                sum += Character.getNumericValue(charArray[i]);
         }
-        System.out.println("Sum of all digits in a string = " +sum);
+        System.out.println("Sum of all digits in a string = " + sum);
         System.out.println("Select your event from 1 to 3 (0-exit):");
     }
 }
