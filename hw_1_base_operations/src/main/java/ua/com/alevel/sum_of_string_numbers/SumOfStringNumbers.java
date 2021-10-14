@@ -23,10 +23,11 @@ public class SumOfStringNumbers {
             }
         }
         int i=1;
+            System.out.println("The number of each character in the string:");
         for (Map.Entry<Character, Integer> charIntEntry : charIn.entrySet()) {
-            // System.out.println("The number of each character in the string:");
-            System.out.printf("%d. %c - %d\n",i++ ,charIntEntry.getKey(), charIntEntry.getValue());
+            System.out.printf("%d. %c - %d\n", i++, charIntEntry.getKey(), charIntEntry.getValue());
+        }
+            System.out.println("Select you event:");
 
         }
     }
-}
