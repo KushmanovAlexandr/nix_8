@@ -27,7 +27,7 @@ public class SumOfStringNumbers {
         for (Map.Entry<Character, Integer> charIntEntry : charIn.entrySet()) {
             System.out.printf("%d. %c - %d\n", i++, charIntEntry.getKey(), charIntEntry.getValue());
         }
-            System.out.println("Select you event:");
+            System.out.println("Select your event from 1 to 3 (0-exit):");
 
         }
     }

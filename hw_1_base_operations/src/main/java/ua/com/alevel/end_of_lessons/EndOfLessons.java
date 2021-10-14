@@ -2,19 +2,27 @@ package ua.com.alevel.end_of_lessons;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class EndOfLessons {
 
     public void run(BufferedReader reader) throws IOException {
         System.out.println("Task3.run");
         System.out.println("Enter the lesson number from 1 to 10:");
-        int countLesson = reader.read();
+        int countLesson = 0;
+        try {
+            countLesson = Integer.parseInt(reader.readLine());
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("Incorrect entry of the lesson number!");
+            System.out.println("Enter the lesson number from 1 to 10:");
+            return;
+        }
         int pauseLong = 15;
         int pauseShort = 5;
         int lessonEndMinutes = 60 * 9 + countLesson * 45 + (countLesson / 2) * pauseShort + ((countLesson - 1) / 2) * pauseLong;
-        System.out.println("Выходные данные:");
-        System.out.printf("%d %d", lessonEndMinutes / 60, lessonEndMinutes % 60);
+        System.out.print("End time of the lesson ");
+        System.out.printf("%d:%d", lessonEndMinutes / 60, lessonEndMinutes % 60);
         System.out.println();
-        System.out.println("Select you event:");
+        System.out.println("Select your event from 1 to 3 (0-exit):");
     }
 }

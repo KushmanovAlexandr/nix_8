@@ -1,7 +1,7 @@
 package ua.com.alevel.char_from_string;
 
-        import java.io.BufferedReader;
-        import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.IOException;
 
 public class CharFromString {
 
@@ -20,6 +20,6 @@ public class CharFromString {
                 sum +=Character.getNumericValue(charArray[i]);
         }
         System.out.println("Sum of all digits in a string = " +sum);
-        System.out.println("Select you event:");
+        System.out.println("Select your event from 1 to 3 (0-exit):");
     }
 }
