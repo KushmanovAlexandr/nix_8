@@ -16,7 +16,7 @@ public class EndOfLessons {
             except /= countLesson; // if (countLesson == 0) throw ArithmeticException
             except = array[countLesson]; // if (countLesson<0 && countLesson>10) throw ArrayIndexOutOfBoundsException
         } catch (ArrayIndexOutOfBoundsException | ArithmeticException | NumberFormatException e) {
-            System.out.println("Неправильнный ввод");
+            System.out.println("Incorrect entry of the lesson number!");
             return;
         }
         int pauseLong = 15;
