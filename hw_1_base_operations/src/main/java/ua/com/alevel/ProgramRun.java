@@ -24,7 +24,7 @@ public class ProgramRun {
                         new SumOfStringNumbers().run(reader);
                     } break;
                     case "3" : {
-                        new EndOfLessons().run();
+                        new EndOfLessons().run(reader);
                     } break;
                     case "0" : {
                         System.exit(0);
