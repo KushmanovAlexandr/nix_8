@@ -10,7 +10,6 @@ public class CharFromString {
         System.out.println("Enter your string:");
         int sum = 0;
         String line = reader.readLine();
-//        System.out.println(line);
         char[] charArray = line.toCharArray();
 //        System.out.println(Arrays.toString(charArray));
 //        for (int i = 0; i < charArray.length; i++) {
