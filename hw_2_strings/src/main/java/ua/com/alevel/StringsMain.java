@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class ReverseStringsMain {
+public class StringsMain {
 
     public static void main(String[] args) {
         int method = 0;
@@ -17,12 +17,13 @@ public class ReverseStringsMain {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         do {
-            System.out.println("Reverse method: \n" +
-                    "if you want to use normal reverse, select \"1\"; \n" +
-                    "if you want to reverse the specified substring in the string, select \"2\"; \n" +
-                    "if you want to use reverse with a character, index or string, select \"3\"; \n" +
-                    "if you want exit, select \"0\". \n" +
-                    "Select your method...");
+            System.out.println("""
+                    Reverse method:\s
+                    if you want to use normal reverse, select "1";\s
+                    if you want to reverse the specified substring in the string, select "2";\s
+                    if you want to use reverse with a character, index or string, select "3";\s
+                    if you want exit, select "0".\s
+                    Select your method...""");
             try {
                 method = WithNoExceptions(reader.readLine());
             } catch (IOException e) {
@@ -30,10 +31,8 @@ public class ReverseStringsMain {
             }
 
             switch (method) {
-                case 0:
-                    System.out.println("Exit");
-                    break;
-                case 1:
+                case 0 -> System.out.println("Exit");
+                case 1 -> {
                     System.out.println("Enter your string...");
                     try {
                         line = reader.readLine();
@@ -41,8 +40,8 @@ public class ReverseStringsMain {
                         e.printStackTrace();
                     }
                     System.out.println(reverse(line));
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.println("Enter your string, then a substring...");
                     try {
                         line = reader.readLine();
@@ -51,8 +50,8 @@ public class ReverseStringsMain {
                         e.printStackTrace();
                     }
                     System.out.println(reverse(line, subLine));
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.println("Enter your string, then enter the first and last index...");
                     try {
                         line = reader.readLine();
@@ -63,9 +62,8 @@ public class ReverseStringsMain {
                         System.out.println("Error! Index entered incorrectly!");
                     }
                     System.out.println(reverse(line, indexStart, indexFinish));
-                    break;
-                default:
-                    System.out.println("Error! Incorrect choice of method!");
+                }
+                default -> System.out.println("Error! Incorrect choice of method!");
             }
         }
         while (method != 0);
@@ -115,7 +113,6 @@ public class ReverseStringsMain {
         if (firstIndex > lastIndex) {
             return "Error! The starting index must not be greater than the ending!";
         }
-        String result = src.substring(0, firstIndex) + reverse(src.substring(firstIndex, lastIndex)) + src.substring(lastIndex);
-        return result;
+        return src.substring(0, firstIndex) + reverse(src.substring(firstIndex, lastIndex)) + src.substring(lastIndex);
     }
 }
