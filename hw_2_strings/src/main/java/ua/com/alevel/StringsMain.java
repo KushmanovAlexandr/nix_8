@@ -81,19 +81,39 @@ public class StringsMain {
     }
 
     public static String reverse(String src) {
-
-        String rightStr;
-        String leftStr;
-        int length = src.length();
-
-        if (length <= 1) {
-            return src;
+        char[] c_array = src.toCharArray();
+        int pos_start = 0;
+        int pos_end;
+        char c, c_tmp;
+        int i, j, rev_length;
+        for (i = 0; i < c_array.length; i++) {
+            c = c_array[i];
+            if (c == ' ' || c == '\n') {
+                if (pos_start != i) {
+                    pos_end = i - 1;
+                    rev_length = (i - pos_start) / 2;
+                    for (j = 0; j < rev_length; j++) {
+                        c_tmp = c_array[pos_start + j];
+                        c_array[pos_start + j] = c_array[pos_end - j];
+                        c_array[pos_end - j] = c_tmp;
+                    }
+                }
+                pos_start = i + 1;
+            }
         }
-        leftStr = src.substring(0, length / 2);
-        rightStr = src.substring(length / 2, length);
-
-        return reverse(rightStr) + reverse(leftStr);
+        //redundant, if only java had '\0' @ end of string
+        if (pos_start != i) {
+            pos_end = i - 1;
+            rev_length = (i - pos_start) / 2;
+            for (j = 0; j < rev_length; j++) {
+                c_tmp = c_array[pos_start + j];
+                c_array[pos_start + j] = c_array[pos_end - j];
+                c_array[pos_end - j] = c_tmp;
+            }
+        }
+        return new String(c_array);
     }
+
 
     public static String reverse(String src, String dest) {
         String result;
