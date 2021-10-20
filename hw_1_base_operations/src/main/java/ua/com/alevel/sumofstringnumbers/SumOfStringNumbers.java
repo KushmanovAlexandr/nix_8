@@ -1,4 +1,4 @@
-package ua.com.alevel.sum_of_string_numbers;
+package ua.com.alevel.sumofstringnumbers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,19 +15,19 @@ public class SumOfStringNumbers {
         String line = reader.readLine();
         char[] charArray = line.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
-            if(Character.isLetter(charArray[i])) {
+            if (Character.isLetter(charArray[i])) {
                 if (!charIn.containsKey(charArray[i]))
                     charIn.put(charArray[i], 1);
                 else
-                    charIn.put(charArray[i], charIn.get(charArray[i])+1);
+                    charIn.put(charArray[i], charIn.get(charArray[i]) + 1);
             }
         }
-        int i=1;
-            System.out.println("The number of each character in the string:");
+        int i = 1;
+        System.out.println("The number of each character in the string:");
         for (Map.Entry<Character, Integer> charIntEntry : charIn.entrySet()) {
             System.out.printf("%d. %c - %d\n", i++, charIntEntry.getKey(), charIntEntry.getValue());
         }
-            System.out.println("Select your event from 1 to 3 (0-exit):");
+        System.out.println("Select your event from 1 to 3 (0-exit):");
 
-        }
     }
+}

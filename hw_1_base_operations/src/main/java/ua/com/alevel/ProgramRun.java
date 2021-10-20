@@ -1,8 +1,8 @@
 package ua.com.alevel;
 
-import ua.com.alevel.char_from_string.CharFromString;
-import ua.com.alevel.sum_of_string_numbers.SumOfStringNumbers;
-import ua.com.alevel.end_of_lessons.EndOfLessons;
+import ua.com.alevel.charfromstring.CharFromString;
+import ua.com.alevel.sumofstringnumbers.SumOfStringNumbers;
+import ua.com.alevel.endoflessons.EndOfLessons;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,12 +38,12 @@ public class ProgramRun {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-        try {
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-    }
     }
 
     private static void preview() {
