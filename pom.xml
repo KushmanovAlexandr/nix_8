@@ -22,6 +22,10 @@
     <modules>
         <module>hw_1_base_operations</module>
         <module>hw_2_strings</module>
+        <module>reversestring</module>
+        <module>unit_3_start_oop</module>
+        <module>unit_4_next_oop</module>
+        <module>unit_5_about_object</module>
     </modules>
 
     <packaging>pom</packaging>

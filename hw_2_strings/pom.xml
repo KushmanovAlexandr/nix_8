@@ -13,10 +13,26 @@
 
     <properties>
         <java.version>17</java.version>
+        <commons.lang3.version>3.12.0</commons.lang3.version>
+        <reversestring.version>2.1</reversestring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.shade.plugin.version>3.2.0</maven.shade.plugin.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ua.com.alevel</groupId>
+            <artifactId>reversestring</artifactId>
+            <version>2.1</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>hw_2_strings</finalName>
@@ -26,8 +42,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
-                    <source>17</source>
-                    <target>17</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>

@@ -1,4 +1,4 @@
-package ua.com.alevel.char_from_string;
+package ua.com.alevel.charfromstring;
 
 import java.io.BufferedReader;
 import java.io.IOException;
