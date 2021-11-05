@@ -17,7 +17,7 @@ public class UserInterface {
         System.out.println("If you want first level please enter 1");
         System.out.println("If you want second level please enter 2");
         System.out.println("If you want third level please enter 3");
-        System.out.println("If you want exit please enter 0");
+        System.out.println("If you want exit press Enter");
         System.out.println("=========================================");
         System.out.print("Make your choice: ");
     }
@@ -27,8 +27,7 @@ public class UserInterface {
         System.out.println("If you want run 1.AreaOfTriangle please enter 1");
         System.out.println("If you want run 2.KnightsMove enter 2");
         System.out.println("If you want run 3.ArrayOfNumbers please enter 3");
-        System.out.println("If you want return to the previous menu enter 4");
-        System.out.println("If you want exit please enter 0");
+        System.out.println("If you want return press Enter");
         System.out.println("=========================================");
         System.out.print("Make your choice: ");
     }
@@ -37,8 +36,7 @@ public class UserInterface {
         System.out.println("=========================================");
         System.out.println("If you want run StringCheck please enter 1");
         System.out.println("If you want run BinaryTreeDepth please enter 2");
-        System.out.println("If you want return to the previous menu enter 4");
-        System.out.println("If you want exit please enter 0");
+        System.out.println("If you want return press Enter");
         System.out.println("=========================================");
         System.out.print("Make your choice: ");
     }
@@ -46,8 +44,7 @@ public class UserInterface {
     private void previewLevelThreeMenu() {
         System.out.println("=========================================");
         System.out.println("If you want first level please enter 1");
-        System.out.println("If you want return to the previous menu enter 4");
-        System.out.println("If you want exit please enter 0");
+        System.out.println("If you want return press Enter");
         System.out.println("=========================================");
         System.out.print("Make your choice: ");
     }
@@ -76,11 +73,6 @@ public class UserInterface {
                         levelThreeMenu(reader);
                         previewMainMenu();
                     }
-                    case 0 -> {
-                        System.out.println("\n *** Exit ***");
-                        System.exit(0);
-                    }
-                    default -> incorectPreview();
                 }
             }
         } catch (IOException e) {
@@ -105,14 +97,6 @@ public class UserInterface {
                     new ArrayOfNumbers().readLineParser(reader);
                     previewLevelOneMenu();
                 }
-                case 4 -> {
-                    return;
-                }
-                case 0 -> {
-                    System.out.println("\n *** Exit ***");
-                    System.exit(0);
-                }
-                default -> incorectPreview();
             }
         }
     }
@@ -130,14 +114,6 @@ public class UserInterface {
                     new BinaryTreeDepth();
                     previewLevelTwoMenu();
                 }
-                case 4 -> {
-                    return;
-                }
-                case 0 -> {
-                    System.out.println("\n *** Exit ***");
-                    System.exit(0);
-                }
-                default -> incorectPreview();
             }
         }
     }
@@ -151,14 +127,6 @@ public class UserInterface {
                     System.out.println();
                     previewLevelThreeMenu();
                 }
-                case 4 -> {
-                    return;
-                }
-                case 0 -> {
-                    System.out.println("\n *** Exit ***");
-                    System.exit(0);
-                }
-                default -> incorectPreview();
             }
         }
     }
