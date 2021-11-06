@@ -112,7 +112,7 @@ public class UserInterface {
                     previewLevelTwoMenu();
                 }
                 case 2 -> {
-                    new BinaryTreeDepth();
+                    new BinaryTreeDepth().run(reader);
                     previewLevelTwoMenu();
                 }
             }
