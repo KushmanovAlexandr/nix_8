@@ -3,6 +3,7 @@ package ua.com.alevel;
 import ua.com.alevel.levelone.AreaOfTriangle;
 import ua.com.alevel.levelone.ArrayOfNumbers;
 import ua.com.alevel.levelone.KnightsMove;
+import ua.com.alevel.levelthree.GameOfLife;
 import ua.com.alevel.leveltwo.BinaryTreeDepth;
 import ua.com.alevel.leveltwo.StringCheck;
 
@@ -124,7 +125,7 @@ public class UserInterface {
         while ((choice = reader.readLine()) != null && choice.matches("\\d")) {
             switch (Integer.parseInt(choice)) {
                 case 1 -> {
-                    System.out.println();
+                    new GameOfLife();
                     previewLevelThreeMenu();
                 }
             }
