@@ -16,13 +16,14 @@ public class BinaryTreeDepth {
             Pattern pattern = Pattern.compile("\\d+");
             Matcher matcher = pattern.matcher(choice);
             while (matcher.find()) {
-                if (nodeRoot == null){
-                    nodeRoot = new TreeNode(Integer.parseInt(matcher.group()));;
+                if (nodeRoot == null) {
+                    nodeRoot = new TreeNode(Integer.parseInt(matcher.group()));
+                    ;
                 } else {
                     inputNode(nodeRoot, Integer.parseInt(matcher.group()));
                 }
             }
-            System.out.println("Binary tree depth = "+deptTree(nodeRoot));
+            System.out.println("Binary tree depth = " + deptTree(nodeRoot));
             System.out.println("=========================================");
             System.out.println("If you want try again please press Enter");
             System.out.println("If you want return please enter 4");
@@ -55,7 +56,7 @@ public class BinaryTreeDepth {
         } else {
             left = deptTree(nodeRoot.left);
             right = deptTree(nodeRoot.right);
-            return (left > right ? left : right)+1;
+            return (left > right ? left : right) + 1;
         }
     }
 }

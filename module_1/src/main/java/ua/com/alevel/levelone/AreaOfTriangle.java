@@ -32,7 +32,7 @@ public class AreaOfTriangle {
             System.out.print("y: ");
             double y3 = inputTestDoubleParser(reader);
             double area = Math.abs(((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1)) / 2);
-            System.out.println("Area of triangle = "+area);
+            System.out.println("Area of triangle = " + area);
             System.out.println("=========================================");
             System.out.println("If you want try again please press Enter");
             System.out.println("If you want return please enter 4");
