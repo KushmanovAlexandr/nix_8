@@ -56,7 +56,7 @@ public class ActionsController {
     }
 
     private void addMoreClients(Client bank) {
-        print("Enter the name of the bank:");
+        print("Enter the name of the client:");
         String fullName = getString();
         Client client = new Client();
         client.setFullName(fullName);
