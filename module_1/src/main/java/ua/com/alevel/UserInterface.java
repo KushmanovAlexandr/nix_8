@@ -35,8 +35,8 @@ public class UserInterface {
 
     private void previewLevelTwoMenu() {
         System.out.println("=========================================");
-        System.out.println("If you want run StringCheck please enter 1");
-        System.out.println("If you want run BinaryTreeDepth please enter 2");
+        System.out.println("If you want run 1.StringCheck please enter 1");
+        System.out.println("If you want run 2.BinaryTreeDepth please enter 2");
         System.out.println("If you want return press Enter");
         System.out.println("=========================================");
         System.out.print("Make your choice: ");
@@ -44,7 +44,7 @@ public class UserInterface {
 
     private void previewLevelThreeMenu() {
         System.out.println("=========================================");
-        System.out.println("If you want first level please enter 1");
+        System.out.println("If you want run GameOfLife please enter 1");
         System.out.println("If you want return press Enter");
         System.out.println("=========================================");
         System.out.print("Make your choice: ");
@@ -125,7 +125,7 @@ public class UserInterface {
         while ((choice = reader.readLine()) != null && choice.matches("\\d")) {
             switch (Integer.parseInt(choice)) {
                 case 1 -> {
-                    new GameOfLife();
+                    new GameOfLife().run(reader);
                     previewLevelThreeMenu();
                 }
             }

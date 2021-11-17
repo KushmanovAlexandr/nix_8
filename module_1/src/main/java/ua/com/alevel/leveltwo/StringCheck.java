@@ -59,9 +59,9 @@ public class StringCheck {
             System.out.println();
             System.out.println("=========================================");
             System.out.println("If you want try again please press Enter");
-            System.out.println("If you want return please enter 4");
+            System.out.println("If you want return please enter 0");
             System.out.print("Make your choice: ");
-            if (reader.readLine().equals("4"))
+            if (reader.readLine().equals("0"))
                 return;
             System.out.print("Please enter your string: ");
         }
