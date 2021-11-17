@@ -8,7 +8,7 @@ import ua.com.alevel.service.ClientService;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class  TestService {
-    private static final int BANK_SIZE = 20;
+    private static final int BANK_SIZE = 32;
     MyList<Bank> banks = new MyList<>();
     MyList<Client> clients = new MyList<>();
     BankService bankService = new BankService();
