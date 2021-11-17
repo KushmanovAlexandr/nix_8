@@ -58,11 +58,11 @@ public class GameOfLife {
                 jTmp = j;
                 if (i < 0)
                     iTmp = board.length - 1;
-                if (i > board.length-1)
+                if (i > board.length - 1)
                     iTmp = 0;
                 if (j < 0)
                     jTmp = board[iTmp].length - 1;
-                if (j > board[iTmp].length-1)
+                if (j > board[iTmp].length - 1)
                     jTmp = 0;
                 if (x == i && y == j)
                     continue;
@@ -87,12 +87,12 @@ public class GameOfLife {
             System.out.print("m: ");
             int m = inputTestParser(reader);
             createBoard(n, m);
-            nextStep(n,m);
-            nextStep(n,m);
-            nextStep(n,m);
-            nextStep(n,m);
-            nextStep(n,m);
-            nextStep(n,m);
+            nextStep(n, m);
+            nextStep(n, m);
+            nextStep(n, m);
+            nextStep(n, m);
+            nextStep(n, m);
+            nextStep(n, m);
             System.out.println("=========================================");
             System.out.println("If you want try again please press Enter");
             System.out.println("If you want return please enter 0");
@@ -101,6 +101,7 @@ public class GameOfLife {
                 return;
         }
     }
+
     private int inputTestParser(BufferedReader reader) throws IOException {
         String choice;
         while ((choice = reader.readLine()) != null && !choice.matches("\\d+")) {
