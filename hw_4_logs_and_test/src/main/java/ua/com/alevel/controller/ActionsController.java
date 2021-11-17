@@ -170,7 +170,7 @@ public class ActionsController {
 
     public void findClient() {
         boolean isFind = false;
-        print("Enter the name of the bank:");
+        print("Enter the name of the client:");
         String fullName = getString();
         MyList<Client> clients = clientService.findAllClients();
         for (int i = 0; i < clients.length; i++) {
