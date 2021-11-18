@@ -22,7 +22,7 @@ public class ReverseString {
         for (int i = 0; i < substring.length(); i++) {
             substringReverse = substring.charAt(i) + substringReverse;
         }
-        result = string.replace(substring,substringReverse);
+        result = string.replace(substring, substringReverse);
         return result;
     }
 
@@ -33,10 +33,10 @@ public class ReverseString {
         String substring = string.substring(firstIndex, lastIndex + 1);
         //     System.out.println(substring);
         String[] words = substring.split(" "); // Разбиение строки на слова с помощью разграничителя (пробел)
-        for (int i=0; i < words.length; i++) {
+        for (int i = 0; i < words.length; i++) {
             substringReverse = (substringReverse + " " + reverseString(words[i])).trim();
         }
-        result = string.replace(substring,substringReverse);
+        result = string.replace(substring, substringReverse);
         return result;
     }
 
@@ -49,10 +49,10 @@ public class ReverseString {
         substring = string.substring(firstIndex, lastIndex + 1);
         //     System.out.println(substring);
         String[] words = substring.split(" "); // Разбиение строки на слова с помощью разграничителя (пробел)
-        for (int i=0; i < words.length; i++) {
+        for (int i = 0; i < words.length; i++) {
             substringReverse = (substringReverse + " " + reverseString(words[i])).trim();
         }
-        result = string.replace(substring,substringReverse);
+        result = string.replace(substring, substringReverse);
         return result;
     }
 
@@ -66,10 +66,10 @@ public class ReverseString {
         substring = string.substring(firstIndex, lastIndex + counter);
         //     System.out.println(substring);
         String[] words = substring.split(" "); // Разбиение строки на слова с помощью разграничителя (пробел)
-        for (int i=0; i < words.length; i++) {
+        for (int i = 0; i < words.length; i++) {
             substringReverse = (substringReverse + " " + reverseString(words[i])).trim();
         }
-        result = string.replace(substring,substringReverse);
+        result = string.replace(substring, substringReverse);
         return result;
     }
 
