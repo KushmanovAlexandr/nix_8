@@ -4,107 +4,95 @@ package ua.com.alevel;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class StringsMain {
 
-    public static void main(String[] args) {
-        int method = 0;
-        int indexStart = 0;
-        int indexFinish = 0;
-        String line = "";
-        String subLine = "";
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        do {
-            System.out.println("""
-                    Reverse method:\s
-                    if you want to use normal reverse, select "1";\s
-                    if you want to reverse the specified substring in the string, select "2";\s
-                    if you want to use reverse with a character, index or string, select "3";\s
-                    if you want exit, select "0".\s
-                    Select your method...""");
-            try {
-                method = WithNoExceptions(reader.readLine());
-            } catch (IOException e) {
-                e.printStackTrace();
+    public static void main(String[] args) throws IOException {
+        Scanner inputUser = new Scanner(System.in);
+        System.out.println("Выберите операцию со строкой или нажмите 'q' для выхода: ");
+        System.out.println("1 - реверс строки");
+        System.out.println("2 - реверс по указанной подстроке");
+        System.out.println("3 - реверс по индексам");
+        System.out.println("4 - реверс по символам");
+        System.out.println("5 - реверс по строкам");
+        String choice = inputUser.next();
+        while (!"q".equals(choice)) {
+            switch (choice) {
+                case "1":
+                    reverseString();
+                    break;
+                case "2":
+                    reverseSubstring();
+                    break;
+                case "3":
+                    reverseStringByIndexes();
+                    break;
+                case "4":
+                    reverseStringByChars();
+                    break;
+                case "5":
+                    reverseStringByStrings();
+                    break;
+                default:
+                    throw new IllegalArgumentException("Неизвестный выбор!");
             }
-
-            switch (method) {
-                case 0 -> System.out.println("Exit");
-                case 1 -> {
-                    System.out.println("Enter your string...");
-                    try {
-                        line = reader.readLine();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println(reverse(line));
-                }
-                case 2 -> {
-                    System.out.println("Enter your string, then a substring...");
-                    try {
-                        line = reader.readLine();
-                        subLine = reader.readLine();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println(reverse(line, subLine));
-                }
-                case 3 -> {
-                    System.out.println("Enter your string, then enter the first and last index...");
-                    try {
-                        line = reader.readLine();
-                        indexStart = WithNoExceptions(reader.readLine());
-                        indexFinish = WithNoExceptions(reader.readLine());
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        System.out.println("Error! Index entered incorrectly!");
-                    }
-                    System.out.println(reverse(line, indexStart, indexFinish));
-                }
-                default -> System.out.println("Error! Incorrect choice of method!");
-            }
-        }
-        while (method != 0);
-
-
-    }
-
-    public static int WithNoExceptions(String number) {
-        int defaultValue = Integer.MAX_VALUE;
-        try {
-            return Integer.parseInt(number);
-        } catch (NumberFormatException e) {
-            return defaultValue;
+            System.out.println("Выберите операцию со строкой или нажмите 'q' для выхода: ");
+            System.out.println("1 - реверс строки");
+            System.out.println("2 - реверс по указанной подстроке");
+            System.out.println("3 - реверс по индексам");
+            System.out.println("4 - реверс по символам");
+            System.out.println("5 - реверс по строкам");
+            choice = inputUser.next();
         }
     }
 
-    public static String reverse(String src) {
-
-        String[] srcStringArray = src.split(" ");
-        StringBuilder srcBuilder = new StringBuilder();
-        for (int i = 0; i < srcStringArray.length; i++) {
-            char[] charArray = srcStringArray[i].toCharArray();
-            for (int j = 0; j < charArray.length; j++) {
-                srcBuilder.append(charArray[charArray.length - j - 1]);
-            }
-            if (i < srcStringArray.length - 1)
-                srcBuilder.append(" ");
-        }
-        src = srcBuilder.toString();
-        return src;
+    public static void reverseString() throws IOException {
+        BufferedReader inputUser = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Введите строку: ");
+        String string = inputUser.readLine();
+        System.out.println(ReverseString.reverseString(string));
     }
 
-
-    public static String reverse(String src, String dest) {
-
-        return src.replaceAll(dest, reverse(dest));
+    public static void reverseSubstring() throws IOException {
+        BufferedReader inputUser = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Введите строку: ");
+        String string = inputUser.readLine();
+        System.out.print("Введите подстроку: ");
+        String substring = inputUser.readLine();
+        System.out.println(ReverseString.reverseString(string, substring));
     }
 
+    public static void reverseStringByIndexes() throws IOException {
+        BufferedReader inputUser = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Введите строку: ");
+        String string = inputUser.readLine();
+        System.out.print("Введите первый индекс: ");
+        int firstIndex = Integer.parseInt(inputUser.readLine());
+        System.out.print("Введите последний индекс: ");
+        int lastIndex = Integer.parseInt(inputUser.readLine());
+        System.out.println(ReverseString.reverseString(string, firstIndex, lastIndex));
+    }
 
-    public static String reverse(String src, int firstIndex, int lastIndex) {
+    public static void reverseStringByChars() throws IOException {
+        BufferedReader inputUser = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Введите строку: ");
+        String string = inputUser.readLine();
+        System.out.print("Введите первый символ: ");
+        char firstChar = inputUser.readLine().charAt(0);
+        System.out.print("Введите последний символ: ");
+        char lastChar = inputUser.readLine().charAt(0);
+        System.out.println(ReverseString.reverseString(string, firstChar, lastChar));
+    }
 
-        return src.replace(src.substring(firstIndex, lastIndex + 1), reverse(src.substring(firstIndex, lastIndex + 1)));
+    public static void reverseStringByStrings() throws IOException {
+        BufferedReader inputUser = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Введите строку: ");
+        String string = inputUser.readLine();
+        System.out.print("Введите первую подстроку: ");
+        String firstString = inputUser.readLine();
+        System.out.print("Введите последнюю подстроку: ");
+        String lastString = inputUser.readLine();
+        System.out.println(ReverseString.reverseString(string, firstString, lastString));
     }
 }

@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>ua.com.alevel</groupId>
-            <artifactId>reversestring</artifactId>
+            <artifactId>ReverseString</artifactId>
             <version>2.1</version>
         </dependency>
     </dependencies>
