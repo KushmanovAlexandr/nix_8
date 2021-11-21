@@ -2,28 +2,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>nix_8</artifactId>
+        <groupId>ua.com.alevel</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
     <artifactId>hw_4_logs_and_test</artifactId>
-    <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <name>app</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <lombok.version>1.18.20</lombok.version>
-        <slf4j.version>1.7.30</slf4j.version>
-        <logback.version>1.2.3</logback.version>
+        <java.version>17</java.version>
+        <commons.lang3.version>3.12.0</commons.lang3.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.shade.plugin.version>3.2.0</maven.shade.plugin.version>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
+        <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
         <junit.version>4.13.1</junit.version>
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
-        <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
-        <maven.shade.plugin.version>3.2.0</maven.shade.plugin.version>
+        <slf4j.version>1.7.30</slf4j.version>
+        <logback.version>1.2.3</logback.version>
         <logs.folder>logs</logs.folder>
-        <logs.test.folder>test_logs</logs.test.folder>
-        <logs.life.folder>life_logs</logs.life.folder>
+        <logs.test.folder>test</logs.test.folder>
+        <logs.life.folder>life</logs.life.folder>
     </properties>
 
     <profiles>
@@ -51,14 +53,6 @@
     </profiles>
 
     <dependencies>
-
-        <!-- LOMBOK -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-        </dependency>
-
         <!-- JUNIT -->
         <dependency>
             <groupId>junit</groupId>
@@ -79,6 +73,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- LOGS -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -95,11 +90,10 @@
             <artifactId>logback-core</artifactId>
             <version>${logback.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
-        <finalName>app</finalName>
+        <finalName>main</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -114,6 +108,16 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>${maven.shade.plugin.version}</version>
                 <executions>
@@ -124,7 +128,8 @@
                         </goals>
                         <configuration>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>ua.com.alevel.TestsLogsMain</mainClass>
                                 </transformer>
                             </transformers>
