@@ -93,7 +93,7 @@
     </dependencies>
 
     <build>
-        <finalName>main</finalName>
+        <finalName>hw_4_logs_and_test</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

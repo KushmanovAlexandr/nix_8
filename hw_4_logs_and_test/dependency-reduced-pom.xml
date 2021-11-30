@@ -14,7 +14,7 @@
         <directory>src/main/resources</directory>
       </resource>
     </resources>
-    <finalName>main</finalName>
+    <finalName>hw_4_logs_and_test</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>

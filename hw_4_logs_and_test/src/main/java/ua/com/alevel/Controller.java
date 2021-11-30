@@ -13,11 +13,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Controller {
-    private ClientService clientService = new ClientServiceImpl();
-    private BankService bankService = new BankServiceImpl();
+    private final ClientService clientService = new ClientServiceImpl();
+    private final BankService bankService = new BankServiceImpl();
 
     public void startController() {
-        creatDB();
+        createDB();
         boolean isContinue = true;
         while (isContinue) {
             System.out.println(" 1 - create client");
@@ -100,8 +100,8 @@ public class Controller {
 
     public void deleteClient() {
         ClientObject[] clientObjects = clientService.getAllClientObject();
-        for (int i = 0; i < clientObjects.length; i++) {
-            System.out.println("id = " + clientObjects[i].getId() + " name = " + clientObjects[i].getName());
+        for (ClientObject clientObject : clientObjects) {
+            System.out.println("id = " + clientObject.getId() + " name = " + clientObject.getName());
         }
         System.out.print("enter client id for delete:");
         int id = integerReader();
@@ -110,8 +110,8 @@ public class Controller {
 
     public void deleteBank() {
         BankObject[] bankObjects = bankService.getAllBankObject();
-        for (int i = 0; i < bankObjects.length; i++) {
-            System.out.println("id = " + bankObjects[i].getId() + " name = " + bankObjects[i].getName());
+        for (BankObject bankObject : bankObjects) {
+            System.out.println("id = " + bankObject.getId() + " name = " + bankObject.getName());
         }
         System.out.println("enter bank id for delete");
         int id = integerReader();
@@ -121,8 +121,8 @@ public class Controller {
     public void updateClient() {
         ClientObject[] clientObjects = clientService.getAllClientObject();
 
-        for (int i = 0; i < clientObjects.length; i++) {
-            System.out.println("id = " + clientObjects[i].getId() + " name = " + clientObjects[i].getName());
+        for (ClientObject clientObject : clientObjects) {
+            System.out.println("id = " + clientObject.getId() + " name = " + clientObject.getName());
         }
         System.out.print("enter client id for update:");
         int id = integerReader();
@@ -134,8 +134,8 @@ public class Controller {
 
     public void updateBank() {
         BankObject[] bankObjects = bankService.getAllBankObject();
-        for (int i = 0; i < bankObjects.length; i++) {
-            System.out.println("id = " + bankObjects[i].getId() + " name = " + bankObjects[i].getName());
+        for (BankObject object : bankObjects) {
+            System.out.println("id = " + object.getId() + " name = " + object.getName());
         }
         System.out.println("enter bank id for update");
         int id = integerReader();
@@ -147,8 +147,8 @@ public class Controller {
 
     public void getClient() {
         ClientObject[] clientObjects = clientService.getAllClientObject();
-        for (int i = 0; i < clientObjects.length; i++) {
-            System.out.println("id = " + clientObjects[i].getId() + " name = " + clientObjects[i].getName());
+        for (ClientObject object : clientObjects) {
+            System.out.println("id = " + object.getId() + " name = " + object.getName());
         }
         System.out.print("enter client id");
         int id = integerReader();
@@ -164,8 +164,8 @@ public class Controller {
 
     public void getBank() {
         BankObject[] bankObjects = bankService.getAllBankObject();
-        for (int i = 0; i < bankObjects.length; i++) {
-            System.out.println("id = " + bankObjects[i].getId() + " name = " + bankObjects[i].getName());
+        for (BankObject object : bankObjects) {
+            System.out.println("id = " + object.getId() + " name = " + object.getName());
         }
         System.out.println("enter bank id ");
         int id = integerReader();
@@ -181,8 +181,8 @@ public class Controller {
 
     public void addBankToClient() {
         ClientObject[] clientObjects = clientService.getAllClientObject();
-        for (int i = 0; i < clientObjects.length; i++) {
-            System.out.println("id = " + clientObjects[i].getId() + " name = " + clientObjects[i].getName());
+        for (ClientObject object : clientObjects) {
+            System.out.println("id = " + object.getId() + " name = " + object.getName());
         }
         System.out.print("enter client id");
         int id = integerReader();
@@ -196,8 +196,8 @@ public class Controller {
         }
         BankObject[] bankObjects = bankService.getAllBankObject();
         System.out.println("all bank list");
-        for (int i = 0; i < bankObjects.length; i++) {
-            System.out.println("id = " + bankObjects[i].getId() + " name = " + bankObjects[i].getName());
+        for (BankObject bankObject : bankObjects) {
+            System.out.println("id = " + bankObject.getId() + " name = " + bankObject.getName());
         }
         System.out.print("enter id to add:");
         int bankId = integerReader();
@@ -229,8 +229,8 @@ public class Controller {
 
     public void addClientToBank() {
         BankObject[] bankObjects = bankService.getAllBankObject();
-        for (int i = 0; i < bankObjects.length; i++) {
-            System.out.println("id = " + bankObjects[i].getId() + " name = " + bankObjects[i].getName());
+        for (BankObject object : bankObjects) {
+            System.out.println("id = " + object.getId() + " name = " + object.getName());
         }
         System.out.println("enter bank id ");
         int id = integerReader();
@@ -244,8 +244,8 @@ public class Controller {
         }
         ClientObject[] clientObjects = clientService.getAllClientObject();
         System.out.println("all clients list");
-        for (int i = 0; i < clientObjects.length; i++) {
-            System.out.println("id = " + clientObjects[i].getId() + " name = " + clientObjects[i].getName());
+        for (ClientObject clientObject : clientObjects) {
+            System.out.println("id = " + clientObject.getId() + " name = " + clientObject.getName());
         }
         System.out.print("enter id to add:");
         int clientId = integerReader();
@@ -293,7 +293,7 @@ public class Controller {
         return "";
     }
 
-    private void creatDB() {
+    private void createDB() {
         String name = "test ";
         for (int i = 0; i < 10; i++) {
             ClientObject clientObject = new ClientObject();
