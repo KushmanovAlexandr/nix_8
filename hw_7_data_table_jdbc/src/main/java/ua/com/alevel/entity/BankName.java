@@ -1,0 +1,6 @@
+package ua.com.alevel.entity;
+
+public enum BankName {
+
+    PRIVATBANK, ALFABANK, OSCHADBANK, UKRGAZBANK, PUMB, KREDOBANK, MEGABANK, TASKOMBANK, MONOBANK, OTPBANK, KONKORD
+}
