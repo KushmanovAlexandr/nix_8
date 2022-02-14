@@ -29,3 +29,7 @@ module_2 = 8
 Error read file: For input string: "gdansk warszawa"
 
 это не обработка ошибок - а просто вывод еррорки)
+
+hw_7 = 7
+
+круд не полный(
